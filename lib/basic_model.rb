@@ -51,6 +51,10 @@ class BasicModel
     database
   end
 
+  def db
+    self.class.db(@database_name)
+  end
+
   def initialize(database_name, attributes={})
     @database_name = database_name
     @attributes    = default_attributes.merge(attributes)
